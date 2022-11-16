@@ -1,16 +1,15 @@
-export const App = () => {
+import { Navigate, Route, Routes } from "react-router-dom";
+import HistoryPage from "../pages/HistoryPage";
+import MainPage from "../pages/MainPage";
+
+const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <Routes>
+      <Route path="/transaction/*" element={<MainPage />} />
+      <Route path="/history/:transType" element={<HistoryPage />} />
+      <Route path="*" element={<Navigate to={"/transaction"} />} />
+    </Routes>
   );
 };
+
+export default App;
