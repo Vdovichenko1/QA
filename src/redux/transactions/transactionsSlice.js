@@ -1,13 +1,13 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { transactions } from "../../data/transactions";
+import { createSlice } from '@reduxjs/toolkit';
+import { transactions } from '../../data/transactions';
 import {
   addIncomeTransaction,
   addExpenseTransaction,
   getIncomeTransactions,
   getExpenseTransactions,
-} from "./transactionsOperations";
+} from './transactionsOperations';
 
-const handlePending = (state) => {
+const handlePending = state => {
   state.isLoading = true;
 };
 const handleRejected = (state, { payload }) => {
@@ -16,7 +16,7 @@ const handleRejected = (state, { payload }) => {
 };
 
 const transactionsSlice = createSlice({
-  name: "transactions",
+  name: 'transactions',
   initialState: {
     income: [],
     expense: [],
